@@ -12,7 +12,7 @@ from pytgcalls.types.input_stream import AudioPiped
 async def playfrom(client, m: Message):
    chat_id = m.chat.id
    if len(m.command) < 2:
-      await m.reply("**USAGE:** \n\n`/playfrom [chat_id/username]` \n`/playfrom [chat_id/username] ; [no. of songs]`")
+      await m.reply("**USO:** \n\n`/playfrom [chat_id/username]` \n`/playfrom [chat_id/username] ; [no. of songs]`")
    else:
       args = m.text.split(maxsplit=1)[1]
       if ";" in args:
@@ -21,7 +21,7 @@ async def playfrom(client, m: Message):
       else:
          chat = args
          limit = 10
-      hmm = await m.reply(f"Searching the last **{limit}** Songs from `{chat}`")
+      hmm = await m.reply(f"Procurando as últimas **{limit}** Músicas de `{chat}`")
       try:
          async for x in bot.search_messages(chat, limit=limit, filter="audio"):
                location = await x.download()
@@ -41,8 +41,8 @@ async def playfrom(client, m: Message):
                      stream_type=StreamType().pulse_stream,
                   )
                   add_to_queue(chat_id, songname, location, link, "Audio", 0)
-                  await m.reply(f"**Started Playing Songs from {chat} ▶** \n**🎧 SONG** : [{songname}]({link}) \n**💬 CHAT** : `{chat_id}`", disable_web_page_preview=True)
+                  await m.reply(f"**Começou a tocar músicas no {chat} ▶** \n**🔄 Música** : [{songname}]({link}) \n**♦️ CHAT** : `{chat_id}`", disable_web_page_preview=True)
          await hmm.delete()
-         await m.reply(f"Added **{limit}** SONGS to Queue")
+         await m.reply(f"Adicionado **{limit}** MÚSICAS para fila")
       except Exception as e:
          await hmm.edit(f"**ERROR** \n`{e}`")
