@@ -64,7 +64,7 @@ async def play(client, m: Message):
             songname = "Voice Note"
          if chat_id in QUEUE:
             pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
-            await huehue.edit(f"Queued at **#{pos}**")
+            await huehue.edit(f"♬ Na fila em posição: (づ￣ ³￣)づ  **#{pos}**")
          else:
             await call_py.join_group_call(
                chat_id,
@@ -93,7 +93,7 @@ async def play(client, m: Message):
                else:
                   if chat_id in QUEUE:
                      pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
-                     await huehue.edit(f"Queued at **#{pos}**")
+                     await huehue.edit(f"♬ Na fila em posição: (づ￣ ³￣)づ  **#{pos}**")
                   else:
                      try:
                         await call_py.join_group_call(
@@ -164,7 +164,7 @@ async def stream(client, m: Message):
       else:
          if chat_id in QUEUE:
             pos = add_to_queue(chat_id, "Radio 📻", livelink, link, "Audio", 0)
-            await huehue.edit(f"Queued at **#{pos}**")
+            await huehue.edit(f"(⌒_⌒;) Na fila em posição: **#{pos}**")
          else:
             try:
                await call_py.join_group_call(
