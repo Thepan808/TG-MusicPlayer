@@ -3,5 +3,5 @@ git+https://github.com/pyrogram/pyrogram@master
 pytgcalls==2.1.0
 asyncio
 youtube-search-python
-yt_dlp
+yt-dlp
 python-dotenv
