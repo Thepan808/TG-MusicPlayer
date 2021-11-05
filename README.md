@@ -5,7 +5,7 @@ It's made with [PyTgCalls](https://github.com/pytgcalls/pytgcalls) and [Pyrogram
 
 
 ## Requirements
-- Python 3.10
+- Python 3.7
 - FFMPEG
 - Nodejs v17
 
