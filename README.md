@@ -5,15 +5,15 @@ It's made with [PyTgCalls](https://github.com/pytgcalls/pytgcalls) and [Pyrogram
 
 
 ## Requirements
-- Python 3.7
+- Python 3.8+
 - FFMPEG
-- Nodejs v17
+- Nodejs v16+
 
 
 ## Deployment
 
 ### Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Thepan808/TG-MusicPlayer)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ### Local Deploy
 1) Installing NodeJS
@@ -51,6 +51,7 @@ python3 main.py
 - `API_HASH`
 - `SESSION` - A Pyrogram String Session. Get one from [Here](https://replit.com/@dashezup/generate-pyrogram-session-string)
 - `HNDLR` - Your Userbot Handler (Default is !)
+- `GROUP_MODE` - if Value is set to `True`, Anyone can Play. Set it to `False` to restrict play access to Sudo Users/Contacts only.
 
 
 ## Commands and Usage
