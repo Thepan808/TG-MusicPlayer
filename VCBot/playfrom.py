@@ -13,7 +13,7 @@ async def playfrom(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
    chat_id = m.chat.id
    if len(m.command) < 2:
-      await m.reply("**USAGE:** \n\n`/playfrom [chat_id/username]` \n`/playfrom [chat_id/username] ; [no. of songs]`")
+      await m.reply("**USE:** \n\n`/playfrom [chat_id/username]` \n`/playfrom [chat_id/username] ; [play de música]`")
    else:
       args = m.text.split(maxsplit=1)[1]
       if ";" in args:
@@ -22,7 +22,7 @@ async def playfrom(client, m: Message):
       else:
          chat = args
          limit = 10
-      hmm = await m.reply(f"Searching the last **{limit}** Songs from `{chat}`")
+      hmm = await m.reply(f"Procurando o último **{limit}** de Músicas para `{chat}`")
       try:
          async for x in bot.search_messages(chat, limit=limit, filter="audio"):
                location = await x.download()
@@ -45,8 +45,8 @@ async def playfrom(client, m: Message):
                      stream_type=StreamType().pulse_stream,
                   )
                   add_to_queue(chat_id, songname, location, link, "Audio", 0)
-                  await m.reply(f"**Started Playing Songs from {chat} ▶** \n**🎧 SONG** : [{songname}]({link}) \n**💬 CHAT** : `{chat_id}`", disable_web_page_preview=True)
+                  await m.reply(f"**Iniciou, músicas sendo tocada no {chat} ▶** \n**♦️ Música** : [{songname}]({link}) \n**♦️ CHAT** : `{chat_id}`", disable_web_page_preview=True)
          await hmm.delete()
-         await m.reply(f"Added **{limit}** SONGS to Queue")
+         await m.reply(f"Adicionado **{limit}** Músicas para Fila")
       except Exception as e:
          await hmm.edit(f"**ERROR** \n`{e}`")
