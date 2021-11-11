@@ -1,6 +1,6 @@
 TgCrypto
 git+https://github.com/pyrogram/pyrogram@master
-pytgcalls==2.1.0
+py-tgcalls==0.8.1
 asyncio
 youtube-search-python
 yt-dlp
